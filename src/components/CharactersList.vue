@@ -11,7 +11,11 @@ export default {
 <template>
     <h6>Found 63 characters</h6>
 
-    <CharactersItem />
+    <div class="container">
+        <div class="row row-cols-5">
+            <CharactersItem />
+        </div>
+    </div>
 
 </template>
 
@@ -23,5 +27,9 @@ h6 {
     padding: 1rem;
     margin-bottom: 1rem;
     background-color: rgb(30, 30, 30);
+}
+
+.col {
+    margin-bottom: 0.5rem;
 }
 </style>
