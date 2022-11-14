@@ -1,5 +1,7 @@
 <script>
 import CharactersItem from './CharactersItem.vue'
+import { store } from '../../src/store.js'
+
 export default {
     name: 'CharactersList',
     components: {
@@ -13,7 +15,7 @@ export default {
 
     <div class="container">
         <div class="row row-cols-5">
-            <CharactersItem />
+            <CharactersItem :character="character" v-for="character in store.characters" />
         </div>
     </div>
 

@@ -1,6 +1,9 @@
 <script>
 export default {
-    name: 'CharactersItem'
+    name: 'CharactersItem',
+    props: {
+        character: Object
+    }
 }
 </script>
 
@@ -8,11 +11,10 @@ export default {
 
     <div class="col">
         <div class="my_card">
-            <img src="https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg"
-                alt="">
-            <div class="name">Lorem, ipsum.</div>
-            <div class="series">Lorem, dolor.</div>
-            <div class="state">Presumed dead</div>
+            <img :src="character.img" alt="">
+            <div class="name">{{ character.name }}</div>
+            <div class="series">{{ character.category }}</div>
+            <div class="status">{{ character.staus }}</div>
         </div>
     </div>
 
@@ -32,7 +34,7 @@ export default {
     }
 
     .series,
-    .state {
+    .status {
         color: gray;
         margin-top: 0.25rem;
     }

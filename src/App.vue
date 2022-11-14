@@ -20,11 +20,10 @@ export default {
     methods: {
         callApi(url) {
             axios.get(url)
-                .then(reponse => {
-                    console.log(reponse.data)
-                    this.store.name = reponse.data.name
-                    this.store.series = reponse.data.category
-                    this.store.status = reponse.data.status
+                .then(response => {
+                    console.log(response.data)
+                    this.store.characters = response.data
+
                 })
         }
     },
