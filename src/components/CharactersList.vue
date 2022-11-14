@@ -6,6 +6,11 @@ export default {
     name: 'CharactersList',
     components: {
         CharactersItem
+    },
+    data() {
+        return {
+            store
+        }
     }
 }
 </script>
