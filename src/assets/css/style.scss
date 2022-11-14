@@ -1,3 +1,5 @@
+@use '../../../node_modules/bootstrap/scss/bootstrap-grid.scss';
+
 * {
     margin: 0;
     padding: 0;
@@ -10,9 +12,4 @@ img {
 
 body {
     background-color: rgb(0, 42, 52);
-}
-
-.container {
-    max-width: 1200px;
-    margin: auto;
 }

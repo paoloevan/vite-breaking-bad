@@ -8,7 +8,7 @@ export default {
     <div>*inserire nav qui*</div>
 </template>
 
-<style>
+<style scoped>
 div {
     margin: 2rem 0;
     color: white;
