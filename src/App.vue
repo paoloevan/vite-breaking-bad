@@ -21,9 +21,8 @@ export default {
         callApi(url) {
             axios.get(url)
                 .then(response => {
-                    console.log(response.data)
+                    //console.log(response.data)
                     this.store.characters = response.data
-
                 })
         }
     },

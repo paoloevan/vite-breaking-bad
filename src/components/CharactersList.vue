@@ -16,7 +16,7 @@ export default {
 </script>
 
 <template>
-    <h6>Found 63 characters</h6>
+    <h6>Found {{ store.characters.length }} characters</h6>
 
     <div class="container">
         <div class="row row-cols-5">
