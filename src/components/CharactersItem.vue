@@ -14,7 +14,7 @@ export default {
             <img :src="character.img" alt="">
             <div class="name">{{ character.name }}</div>
             <div class="series">{{ character.category }}</div>
-            <div class="status">{{ character.staus }}</div>
+            <div class="status">{{ character.status }}</div>
         </div>
     </div>
 
