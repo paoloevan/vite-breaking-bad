@@ -3,12 +3,14 @@ import CharactersItem from './CharactersItem.vue'
 import { store } from '../../src/store.js'
 import AppLoading from './AppLoading.vue'
 import { onMounted } from 'vue'
+import TotalFound from './TotalFound.vue'
 
 export default {
     name: 'CharactersList',
     components: {
         CharactersItem,
-        AppLoading
+        AppLoading,
+        TotalFound
     },
     data() {
         return {
@@ -19,7 +21,7 @@ export default {
 </script>
 
 <template>
-    <h6>Found 62 characters</h6>
+    <TotalFound />
 
     <div class="container">
         <div class="row row-cols-5" v-if="!store.loading">
