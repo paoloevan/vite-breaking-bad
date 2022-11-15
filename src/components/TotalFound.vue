@@ -14,8 +14,6 @@ export default {
         totalFound() {
 
             return this.store.characters.length
-            //console.log(this.store.characters.length);
-
         }
     }
 }

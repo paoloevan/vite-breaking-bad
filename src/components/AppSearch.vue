@@ -2,9 +2,6 @@
 import { store } from '../store.js'
 export default {
     name: 'AppSearch',
-    components: {
-        store
-    },
     data() {
         return {
             store

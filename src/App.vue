@@ -21,21 +21,16 @@ export default {
         callApi(url) {
             axios.get(url)
                 .then(response => {
-                    //console.log(response.data)
                     this.store.characters = response.data
                     this.store.loading = false
                 })
         },
         searchSeries() {
             const categoryUrl = 'https://www.breakingbadapi.com/api/characters?category='
-            //this.store.API_URL = categoryUrl + this.series
             this.store.API_URL = categoryUrl + this.store.searchText
-            console.log(this.store.API_URL);
             axios.get(categoryUrl + this.store.searchText)
                 .then(response => {
-                    console.log(response.data);
                     this.store.characters = response.data
-                    console.log(this.store.characters.length);
                     this.store.loading = false
                 })
 
@@ -50,9 +45,11 @@ export default {
 <template>
     <div class="container">
         <AppHeader />
+        <!-- / header -->
         <AppSearch @filterSeries="searchSeries" />
+        <!-- / search -->
         <AppMain />
-
+        <!-- / header -->
     </div>
 
 </template>
