@@ -23,9 +23,15 @@ export default {
 
 <style lang="scss" scoped>
 .my_card {
+    height: 100%;
     padding: 1rem;
     background-color: rgb(0, 42, 52);
     text-align: center;
+
+    img {
+        height: 270px;
+        object-fit: cover;
+    }
 
     .name {
         color: white;
