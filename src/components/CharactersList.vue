@@ -19,10 +19,10 @@ export default {
 </script>
 
 <template>
-    <h6>Found {{ store.characters.length }} characters</h6>
+    <h6>Found 62 characters</h6>
 
     <div class="container">
-        <div class="row row-cols-5" v-if="store.characters.length === 62">
+        <div class="row row-cols-5" v-if="!store.loading">
             <CharactersItem :character="character" v-for="character in store.characters" />
         </div>
         <AppLoading v-else />

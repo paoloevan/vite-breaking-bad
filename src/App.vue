@@ -23,6 +23,7 @@ export default {
                 .then(response => {
                     //console.log(response.data)
                     this.store.characters = response.data
+                    this.store.loading = false
                 })
         }
     },
