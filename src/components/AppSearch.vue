@@ -11,12 +11,12 @@ export default {
 </script>
 
 <template>
-    <select v-model="store.searchText" name="series">
+    <select @change="$emit('filterSeries')" v-model="store.searchText" name="series">
         <option value="">Selezionare una serie</option>
         <option value="Breaking+Bad">Breaking Bad</option>
         <option value="Better+Call+Saul">Better Call Saul</option>
     </select>
-    <button @click="$emit('filterSeries')" type="submit">Cerca</button>
+    <!-- <button @click="$emit('filterSeries')" type="submit">Cerca</button> -->
 
 </template>
 
