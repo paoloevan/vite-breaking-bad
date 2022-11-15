@@ -12,6 +12,7 @@ export default {
 
 <style scoped>
 h1 {
+    margin-top: 2rem;
     color: white;
 }
 </style>
