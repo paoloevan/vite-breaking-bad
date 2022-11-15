@@ -16,7 +16,6 @@ export default {
         <option value="Breaking+Bad">Breaking Bad</option>
         <option value="Better+Call+Saul">Better Call Saul</option>
     </select>
-    <!-- <button @click="$emit('filterSeries')" type="submit">Cerca</button> -->
 
 </template>
 
