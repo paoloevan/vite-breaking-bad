@@ -14,7 +14,8 @@ export default {
     },
     data() {
         return {
-            store
+            store,
+            series: ''
         }
     },
     methods: {
@@ -25,6 +26,19 @@ export default {
                     this.store.characters = response.data
                     this.store.loading = false
                 })
+        },
+        searchSeries() {
+            console.log(this.series);
+            const categoryUrl = 'https://www.breakingbadapi.com/api/characters?category='
+            //this.store.API_URL = categoryUrl + this.series
+            console.log(categoryUrl + this.series)
+            axios.get(categoryUrl + this.series)
+                .then(response => {
+                    console.log(response.data);
+                    this.store.characters = response.data
+                    this.store.loading = false
+                })
+
         }
     },
     mounted() {
@@ -37,12 +51,27 @@ export default {
     <div class="container">
         <AppHeader />
         <AppNav />
+        <select v-model="series" name="series">
+            <option value="">Selezionare una serie</option>
+            <option value="Breaking+Bad">Breaking Bad</option>
+            <option value="Better+Call+Saul">Better Call Saul</option>
+        </select>
+        <button @click="searchSeries()" type="submit">Cerca</button>
         <AppMain />
 
     </div>
 
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+select,
+option,
+button {
+    margin: 2rem 0.25rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 10px;
 
+
+}
 </style>
