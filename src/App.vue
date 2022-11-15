@@ -18,26 +18,19 @@ export default {
         }
     },
     methods: {
-        callApi(url) {
+        callApi() {
+            this.store.loading = true
+            const categoryUrl = 'https://www.breakingbadapi.com/api/characters?category='
+            const url = categoryUrl + this.store.searchText
             axios.get(url)
                 .then(response => {
                     this.store.characters = response.data
                     this.store.loading = false
                 })
-        },
-        searchSeries() {
-            const categoryUrl = 'https://www.breakingbadapi.com/api/characters?category='
-            this.store.API_URL = categoryUrl + this.store.searchText
-            axios.get(categoryUrl + this.store.searchText)
-                .then(response => {
-                    this.store.characters = response.data
-                    this.store.loading = false
-                })
-
         }
     },
     mounted() {
-        this.callApi(this.store.API_URL)
+        this.callApi()
     }
 }
 </script>
@@ -46,7 +39,7 @@ export default {
     <div class="container">
         <AppHeader />
         <!-- / header -->
-        <AppSearch @filterSeries="searchSeries" />
+        <AppSearch @filterSeries="callApi" />
         <!-- / search -->
         <AppMain />
         <!-- / header -->
